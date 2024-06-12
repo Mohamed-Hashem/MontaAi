@@ -9,6 +9,8 @@ const SideBar = ({
   newChat,
   uniqueTitles,
   clearHistory,
+  activeChat,
+  setActiveChat
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -27,6 +29,8 @@ const SideBar = ({
       <History
         handleNewChatClick={handleNewChatClick}
         uniqueTitles={uniqueTitles}
+        activeChat={activeChat}
+        setActiveChat={setActiveChat}
       />
       <CopyRight />
     </aside>

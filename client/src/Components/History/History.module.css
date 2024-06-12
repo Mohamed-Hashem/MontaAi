@@ -14,6 +14,9 @@
   padding: 8px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .history ul li:hover {

@@ -13,6 +13,7 @@ const App = () => {
   const [chatTitle, setChatTitle] = useState("");
   const [prompt, setPrompt] = useState("");
   const textAreaRef = useRef(null);
+  const [activeChat, setActiveChat] = useState(false);
 
   const getMessage = async () => {
     if (inputMessage.length === 0) return;
@@ -68,6 +69,7 @@ const App = () => {
   useEffect(() => {
     if (!chatTitle && inputMessage && prompt) {
       setChatTitle(inputMessage);
+      setActiveChat(true);
     }
 
     if (chatTitle && inputMessage && prompt) {
@@ -115,8 +117,7 @@ const App = () => {
   const currentChatTitles = previousChats.filter(
     (prevChat) => prevChat.title === chatTitle
   );
-  console.log("currentChatTitles", currentChatTitles);
-  console.log("previousChats", previousChats);
+
   const uniqueTitles = Array.from(
     new Set(previousChats.map((prevChat) => prevChat.title))
   );
@@ -129,6 +130,8 @@ const App = () => {
         handleNewChatClick={handleNewChatClick}
         newChat={createNewChat}
         uniqueTitles={uniqueTitles}
+        activeChat={activeChat}
+        setActiveChat={setActiveChat}
       />
       <section id="content">
         <Feed chatTitles={currentChatTitles} />
