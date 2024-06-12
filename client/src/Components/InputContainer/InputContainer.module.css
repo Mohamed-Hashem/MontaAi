@@ -22,14 +22,14 @@
 }
 
 .inputContainer textarea:focus,
-.inputContainer textarea:focus ~ button#submit {
+.inputContainer textarea:focus ~ button.submit {
   outline: none;
   background-color: rgba(0, 0, 0);
   border-color: #66afe9;
   box-shadow: 0px 0px 31px 3px rgba(0, 0, 0, 0.5);
 }
 
-.inputContainer button#submit {
+.inputContainer .submit {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -20,7 +20,7 @@ const InputContainer = ({
         rows={1}
       />
       {inputMessage && (
-        <button id="submit" onClick={getMessage}>
+        <button className={style.submit} onClick={getMessage}>
           <IoArrowUpCircle />
         </button>
       )}

@@ -1,5 +1,6 @@
 .feed {
   padding: 0;
+  z-index: 0;
 }
 
 .feed li {
@@ -34,7 +35,7 @@
 }
 
 .feed li.bot.typewriter {
-  border-right: 5px solid rgba(255, 255, 255, 0.5);
+  border-right: 5px solid #202123;
   white-space: nowrap;
   overflow: hidden;
 }
