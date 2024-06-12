@@ -1,3 +1,6 @@
+/* This JavaScript code snippet sets up a server using Express to handle API requests. Here's a
+breakdown of what the code does: */
+
 const PORT = 8000;
 const dotenv = require("dotenv");
 dotenv.config();
@@ -6,9 +9,11 @@ const express = require("express");
 const cors = require("cors");
 const { default: OpenAI } = require("openai");
 const helmet = require("helmet");
+const path = require("path");
 
 const port = process.env.PORT || PORT;
 const app = express();
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -22,6 +27,16 @@ const openai = new OpenAI({
 
 app.post("/completions", async (req, res) => {
   try {
+    /**
+     * Represents the response from the OpenAI chat completions API.
+     * @typedef {Object} OpenAiChatResponse
+     * @property {string} id - The unique identifier of the chat completion.
+     * @property {number} object - The object type, which is always "chat.completion".
+     * @property {number} created - The timestamp when the chat completion was created.
+     * @property {number} model - The model used for the chat completion.
+     * @property {Array} choices - The list of chat completion choices.
+     */
+
     const responseOpenAi = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -34,7 +49,6 @@ app.post("/completions", async (req, res) => {
       temperature: 1,
       top_p: 1,
     });
-
     res.status(200).send({ message: responseOpenAi.choices[0].message });
   } catch (error) {
     console.warn("Error ==> ", error);
