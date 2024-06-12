@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as style from "./History.module.css";
 import { BiSolidCheckCircle } from "react-icons/bi";
 
@@ -17,6 +17,13 @@ const History = ({
     setActive(true);
     setActiveChat(false);
   };
+
+  useEffect(() => {
+    if (activeChat) {
+      setCurrentIndex(-1);
+      setActive(false);
+    }
+  });
 
   return (
     <nav className={style.history}>

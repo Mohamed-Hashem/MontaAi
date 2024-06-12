@@ -134,7 +134,7 @@ const App = () => {
         setActiveChat={setActiveChat}
       />
       <section id="content">
-        <Feed chatTitles={currentChatTitles} />
+        <Feed chatTitles={currentChatTitles} inputMessage={inputMessage} />
         <div id="bottom-content">
           <InputContainer
             inputMessage={inputMessage}

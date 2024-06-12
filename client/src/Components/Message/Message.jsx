@@ -12,9 +12,7 @@ const Message = ({ chatMessage, inputMessage }) => {
   }, [inputMessage]);
 
   return (
-    <li
-      className={`${chatMessage.role === "user" ? "user" : "bot typewriter"}`}
-    >
+    <li className={`${chatMessage.role === "user" ? "user" : "bot"}`}>
       {chatMessage.role === "user" ? (
         <UserMessage chatMessage={chatMessage} />
       ) : (
