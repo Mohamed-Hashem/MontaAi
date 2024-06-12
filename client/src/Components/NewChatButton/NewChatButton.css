@@ -1,0 +1,54 @@
+.sideToggle {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.newChat {
+  border: solid 0.5px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  width: 75%;
+}
+
+.clearHistory {
+  border: solid 0.5px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newChat:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clearHistory:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggleBtn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -15%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009dff;
+}
+
+.toggleBtn:hover {
+  background-color: #007bffcc;
+}

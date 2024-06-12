@@ -1,0 +1,75 @@
+.feed {
+  padding: 0;
+}
+
+.feed li {
+  border-radius: 8px;
+  list-style-type: none;
+  background-color: #444654;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 16px 0;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  word-break: break-all;
+  padding: 0 15px;
+}
+
+.feed li.bot {
+  justify-content: flex-start;
+}
+
+.feed li.user {
+  justify-content: flex-end;
+}
+
+.feed li.user .messageRole {
+  min-width: 25px;
+  text-align: right;
+}
+
+.feed li.bot .messageRole {
+  min-width: 40px;
+  text-align: left;
+}
+
+.feed li.bot.typewriter {
+  border-right: 5px solid rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  0% {
+    border-color: black;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: black;
+  }
+}
+
+.typewriter .messageContent::after {
+  content: "";
+  animation: blink 0.75s step-end infinite;
+}
+
+@media only screen and (max-width: 768px) {
+  .feed {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .feed {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .feed {
+    width: 70%;
+  }
+}

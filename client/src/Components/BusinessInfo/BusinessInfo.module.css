@@ -1,0 +1,16 @@
+.info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.info a {
+  text-decoration: none;
+  margin-left: 5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.info a:hover {
+  color: #009dff;
+}

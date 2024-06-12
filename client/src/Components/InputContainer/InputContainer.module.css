@@ -1,0 +1,42 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputContainer textarea {
+  width: 60%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 0px 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+
+.inputContainer textarea:focus,
+.inputContainer textarea:focus ~ button#submit {
+  outline: none;
+  background-color: rgba(0, 0, 0);
+  border-color: #66afe9;
+  box-shadow: 0px 0px 31px 3px rgba(0, 0, 0, 0.5);
+}
+
+.inputContainer button#submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  height: 44px;
+  cursor: pointer;
+  border-radius: 8px;
+}
