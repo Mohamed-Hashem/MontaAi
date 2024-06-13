@@ -19,7 +19,7 @@ const App = () => {
     if (inputMessage.length === 0) return;
 
     await axios
-      .post("http://localhost:3000/api", {
+      .post("http://localhost:3000/completions", {
         message: inputMessage,
       })
       .then(({ data }) => {

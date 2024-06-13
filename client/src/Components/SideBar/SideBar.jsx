@@ -10,7 +10,7 @@ const SideBar = ({
   uniqueTitles,
   clearHistory,
   activeChat,
-  setActiveChat
+  setActiveChat,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 
