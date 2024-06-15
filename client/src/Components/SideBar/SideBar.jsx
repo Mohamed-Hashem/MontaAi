@@ -4,14 +4,14 @@ import History from "../History/History";
 import CopyRight from "../CopyRight/CopyRight";
 import "./SideBar.css";
 
-const SideBar = ({
+const SideBar = React.memo(function SideBar({
   handleNewChatClick,
   newChat,
   uniqueTitles,
   clearHistory,
   activeChat,
   setActiveChat,
-}) => {
+}) {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -25,16 +25,20 @@ const SideBar = ({
         createNewChat={newChat}
         toggleSidebar={toggleSidebar}
         isOpen={isOpen}
+        HistoryCopyRight={
+          <>
+            <History
+              handleNewChatClick={handleNewChatClick}
+              uniqueTitles={uniqueTitles}
+              activeChat={activeChat}
+              setActiveChat={setActiveChat}
+            />
+            <CopyRight />
+          </>
+        }
       />
-      <History
-        handleNewChatClick={handleNewChatClick}
-        uniqueTitles={uniqueTitles}
-        activeChat={activeChat}
-        setActiveChat={setActiveChat}
-      />
-      <CopyRight />
     </aside>
   );
-};
+});
 
 export default SideBar;

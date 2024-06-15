@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import UserMessage from "../UserMessage/UserMessage";
 import BotMessage from "../BotMessage/BotMessage";
 
-const Message = ({ chatMessage, inputMessage }) => {
+const Message = React.memo(function Message({ chatMessage, inputMessage }) {
   const endRef = useRef(null);
 
   useEffect(() => {
@@ -22,6 +22,6 @@ const Message = ({ chatMessage, inputMessage }) => {
       <div ref={endRef}></div>
     </li>
   );
-};
+});
 
 export default Message;

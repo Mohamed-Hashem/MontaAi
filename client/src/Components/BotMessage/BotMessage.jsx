@@ -2,7 +2,7 @@ import React from "react";
 import monta from "../../assets/monta.svg";
 import Typewriter from "./TypeWriter";
 
-const BotMessage = ({ chatMessage }) => {
+const BotMessage = React.memo(function BotMessage({ chatMessage }) {
   return (
     <>
       <div className="messageRole">
@@ -11,6 +11,6 @@ const BotMessage = ({ chatMessage }) => {
       <Typewriter text={chatMessage.content} />
     </>
   );
-};
+});
 
 export default BotMessage;

@@ -1,7 +1,8 @@
+import React from "react";
 import Message from "../Message/Message";
 import "./Feed.css";
 
-const Feed = ({ chatTitles, inputMessage }) => {
+const Feed = React.memo(function Feed({ chatTitles, inputMessage }) {
   return (
     <ul className="feed">
       {chatTitles &&
@@ -14,6 +15,6 @@ const Feed = ({ chatTitles, inputMessage }) => {
         ))}
     </ul>
   );
-};
+});
 
 export default Feed;

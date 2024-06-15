@@ -1,7 +1,7 @@
 import React from "react";
 import { FaUserTie } from "react-icons/fa";
 
-const UserMessage = ({ chatMessage }) => {
+const UserMessage = React.memo(function UserMessage({ chatMessage }) {
   return (
     <>
       <p className="messageContent">{chatMessage.content}</p>
@@ -10,6 +10,6 @@ const UserMessage = ({ chatMessage }) => {
       </p>
     </>
   );
-};
+});
 
 export default UserMessage;

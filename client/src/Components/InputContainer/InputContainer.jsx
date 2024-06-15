@@ -2,13 +2,13 @@ import React from "react";
 import { IoArrowUpCircle } from "react-icons/io5";
 import * as style from "./InputContainer.module.css";
 
-const InputContainer = ({
+const InputContainer = React.memo(function InputContainer({
   inputMessage,
   handleTextChange,
   handleKeyDown,
   textAreaRef,
   getMessage,
-}) => {
+}) {
   return (
     <div className={style.inputContainer}>
       <textarea
@@ -26,6 +26,6 @@ const InputContainer = ({
       )}
     </div>
   );
-};
+});
 
 export default InputContainer;

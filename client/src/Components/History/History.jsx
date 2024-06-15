@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import * as style from "./History.module.css";
 import { BiSolidCheckCircle } from "react-icons/bi";
 
-const History = ({
+const History = React.memo(function History({
   handleNewChatClick,
   uniqueTitles = [],
   activeChat,
   setActiveChat,
-}) => {
+}) {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   const handleClick = (title, index) => {
@@ -45,6 +45,6 @@ const History = ({
       </ul>
     </nav>
   );
-};
+});
 
 export default History;
