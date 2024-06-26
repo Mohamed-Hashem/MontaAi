@@ -8,7 +8,9 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "format-lint": "prettier --write 'src/**/*.{js,jsx,json,css,scss,html}' && eslint . --fix"
+    "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,html}'",
+    "lint" : "eslint . --fix",
+    "format-lint": "npm run format && npm run lint"
   },
   "dependencies": {
     "axios": "^1.7.2",

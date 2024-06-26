@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import SideBar from "./Components/SideBar/SideBar";
@@ -90,7 +90,7 @@ const App = () => {
       localStorage.setItem("chats", JSON.stringify(newChat));
       setPreviousChats(newChat);
     }
-  }, [prompt, chatTitle]);
+  }, [prompt, chatTitle]); // eslint-disable-line
 
   useEffect(() => {
     const savedChats = JSON.parse(localStorage.getItem("chats")) || [];
