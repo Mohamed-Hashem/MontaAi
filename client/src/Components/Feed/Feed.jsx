@@ -7,11 +7,7 @@ const Feed = React.memo(function Feed({ chatTitles, inputMessage }) {
     <ul className="feed">
       {chatTitles &&
         chatTitles.map((chatMessage, index) => (
-          <Message
-            key={index}
-            chatMessage={chatMessage}
-            inputMessage={inputMessage}
-          />
+          <Message key={index} chatMessage={chatMessage} inputMessage={inputMessage} />
         ))}
     </ul>
   );

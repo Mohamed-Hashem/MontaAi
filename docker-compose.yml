@@ -1,0 +1,26 @@
+services: # Define the services
+  frontend:
+    container_name: frontend-container # Define the name of the container
+    build:
+      context: ./client # Define the context
+    volumes:
+      - ./client/src:/app/src:delegated # Mount the source code directory
+      - /app/node_modules # Mount the node_modules directory
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    command: npm run dev # Define the command to run the application
+
+  backend:
+    container_name: backend-container # Define the name of the container
+    build:
+      context: ./server # Define the context
+    ports:
+      - "4000:4000" # Define the port mapping
+    volumes:
+      - ./server/src:/app/src:delegated # Mount the source code directory
+      - /app/node_modules
+    env_file:
+      - ./server/.env # Define the environment file
+    command: npm run dev # Define the command to run the application
