@@ -12,6 +12,7 @@
   margin: 8px;
   cursor: pointer;
   width: 75%;
+  font-weight: 600;
 }
 
 .clearHistory {

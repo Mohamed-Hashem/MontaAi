@@ -7,8 +7,8 @@
     "start": "vite --host 0.0.0.0",
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format-lint": "prettier --write 'src/**/*.{js,jsx,json,css,scss,html}' && eslint . --fix"
   },
   "dependencies": {
     "axios": "^1.7.2",
@@ -33,5 +33,43 @@
     "prettier": "^3.3.1",
     "vite": "^5.2.0",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "prettier": {
+    "singleQuote": false,
+    "doubleQuote": true,
+    "trailingComma": "all",
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 100
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": { "browser": true, "es2020": true, "node": true },
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+    "settings": { "react": { "version": "detect" } },
+    "plugins": ["react", "react-hooks", "import", "jsx-a11y", "react-refresh","prettier"],
+    "rules": {
+      "react-refresh/only-export-components": [
+        "warn",
+        { "allowConstantExport": true }
+      ],
+      "indent": ["error", 2],
+      "quotes": ["error", "double"],
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".ts",".tsx"] }],
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "react/prop-types": "off",
+      "react/jsx-no-target-blank": ["error", { "allowReferrer": true }],
+      "jsx-a11y/alt-text": ["warn", { "elements": ["img"] }],
+      "jsx-quotes": ["error", "prefer-double"]
+    }
+    }
 }

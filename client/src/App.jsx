@@ -19,7 +19,7 @@ const App = () => {
     if (inputMessage.length === 0) return;
 
     await axios
-      .post("http://localhost:3000/completions", {
+      .post("http://localhost:4000/completions", {
         message: inputMessage,
       })
       .then(({ data }) => {
@@ -114,13 +114,9 @@ const App = () => {
     localStorage.removeItem("chats");
   };
 
-  const currentChatTitles = previousChats.filter(
-    (prevChat) => prevChat.title === chatTitle
-  );
+  const currentChatTitles = previousChats.filter((prevChat) => prevChat.title === chatTitle);
 
-  const uniqueTitles = Array.from(
-    new Set(previousChats.map((prevChat) => prevChat.title))
-  );
+  const uniqueTitles = Array.from(new Set(previousChats.map((prevChat) => prevChat.title)));
 
   return (
     <main id="app">

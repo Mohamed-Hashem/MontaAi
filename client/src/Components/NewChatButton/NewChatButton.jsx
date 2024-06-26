@@ -12,11 +12,7 @@ const NewChatButton = React.memo(function NewChatButton({
   return (
     <>
       <div className="sideToggle">
-        <button
-          onClick={clearHistory}
-          className="clearHistory"
-          title="Clear History"
-        >
+        <button onClick={clearHistory} className="clearHistory" title="Clear History">
           <IoTrashBinOutline />
         </button>
         <button onClick={createNewChat} className="newChat" title="New Chat">

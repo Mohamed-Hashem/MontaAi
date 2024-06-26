@@ -28,8 +28,7 @@ const History = React.memo(function History({
         {uniqueTitles &&
           uniqueTitles.map((title, index) => {
             const isActive =
-              currentIndex === index ||
-              (activeChat && index === uniqueTitles.length - 1);
+              currentIndex === index || (activeChat && index === uniqueTitles.length - 1);
             return (
               <li
                 key={index}

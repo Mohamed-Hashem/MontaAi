@@ -5,10 +5,7 @@ const CopyRight = () => {
   return (
     <footer className={style.copyright}>
       <p>
-        &copy;{" "}
-        <time dateTime={new Date().getFullYear()}>
-          {new Date().getFullYear()}
-        </time>{" "}
+        &copy; <time dateTime={new Date().getFullYear()}>{new Date().getFullYear()}</time>{" "}
         <a
           href="https://www.linkedin.com/in/mohamedhashem/"
           target="_blank"
