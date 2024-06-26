@@ -1,7 +1,5 @@
 /* This JavaScript code snippet sets up a server using Express to handle API requests. Here's a
 breakdown of what the code does: */
-
-const PORT = 8000;
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -11,7 +9,7 @@ const { default: OpenAI } = require("openai");
 const helmet = require("helmet");
 const path = require("path");
 
-const port = process.env.PORT || PORT;
+const PORT = process.env.PORT || 4000;
 const app = express();
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
@@ -51,20 +49,27 @@ app.post("/completions", async (req, res) => {
     });
     res.status(200).send({ message: responseOpenAi.choices[0].message });
   } catch (error) {
-    console.warn("Error ==> ", error);
+    console.error("Error ==> ", error);
   }
 });
 
 app.post("/api", (req, res) => {
-  res
-    .status(200)
+  res.status(200)
     .send({ message: { role: "assistant", content: req.body.message } });
 });
 
 app.get("/api", (_req, res) => {
-  res.json({ message: "Hello, world!" });
+  res.json({ message: "API Page, Mohamed Hashem!" });
 });
 
-app.listen(port, () => {
-  console.log("\x1b[36m[ Your Server is running on PORT :", port, "\x1b[36m]");
+
+app.get("/", (_req, res) => {
+      res.json({ message: "Hello, Mohamed Hashem!, Server is Working" });
+});
+
+app.listen(PORT, () => {
+  console.log(
+    `\x1b[36m[ App is running on ==> http://localhost:` + PORT,
+    "\x1b[36m]"
+  );
 });

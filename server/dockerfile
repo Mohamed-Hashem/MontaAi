@@ -1,0 +1,23 @@
+# Use the official Node.js 20 image as the base image for the container
+FROM node:20-alpine as development
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Install nodemon globally in the container
+RUN npm install -g nodemon
+
+# Copy package.json and package-lock.json files to the working directory in the container /app
+COPY package.json /app
+
+# Install the dependencies in the container
+RUN npm install
+
+# Copy the rest of the application code to the working directory in the container /app
+COPY . /app
+
+# Expose port 3000 to the outside world
+EXPOSE 4000
+
+# Start the application in development mode when the container starts
+CMD [ "npm", "run", "dev" ]
